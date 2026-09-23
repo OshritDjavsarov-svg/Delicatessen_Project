@@ -1,0 +1,59 @@
+<!-- קומפוננטה של תמונות מתחלפות -->
+<app-cange-images></app-cange-images>
+
+<!-- קומפוננטה לאזור האפור אודות דליקטסן -->
+<app-gray-place></app-gray-place>
+
+<!-- קומפוננטה לכפתורי סינון -->
+<app-filter-button 
+    (categoryChanged)="onCategoryChange($event)" 
+    (filtersChanged)="onFiltersChange($event)">
+</app-filter-button>
+
+
+<!-- בדיקה מה קיבלנו מהשרת -->
+<!-- <div dir="ltr" style="background: #f0f0f0; padding: 10px; border: 1px solid red; margin-bottom: 20px;">
+  <pre>{{ productService.products() | json }}</pre>
+</div> -->
+
+
+<section class="product-section">
+    <div class="container">
+        
+        @for (group of (filteredProducts() | groupBy:'categoryName'); track group.category) {
+            
+            <h1 class="category-title">{{ group.category }}</h1>
+            
+            <div class="product-grid">
+                @for (product of group.items; track product.productId) {
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img [src]="'images/' + group.category + '/' + product.imageUrl" [alt]="product.productName">
+                        </div>
+
+                        <div class="product-details">
+                            <h3 class="product-name">
+                                <a class="info" [routerLink]="['/product-info', product.productName]">{{ product.productName }}</a>
+                            </h3>
+                            
+                            <p class="product-description">{{ product.productDescription }}</p>
+
+                            @if (product.filterProduct && product.filterProduct !== 'אין') {
+                                <p class="filter-disign">{{ product.filterProduct }}</p>
+                            } @else {
+                                <p class="unfilter-disign"></p>
+                            }
+
+                            <p class="product-price">{{ product.productPrice }} ₪</p>
+                            
+                            <button class="product-button" (click)="onAddToCart(product)">הוספה לסל</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        } @empty {
+            <p>טוען מוצרים...</p>
+        }
+    </div>
+</section>

@@ -1,0 +1,88 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* --------first footer----------- */
+.first-footer {
+  margin-top: 100px;
+  background-color: #fccf61;
+  padding: 50px 0px;
+  direction: rtl;
+}
+
+.newsletter-section {
+  max-width: 600px;
+  text-align: right;
+}
+
+.newsletter-label {
+  font-size: 30px;
+  padding: 5px;
+  color: #000;
+  font-weight: 900;
+}
+
+.newsletter-form {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  background-color:#fccf61;
+  flex: 1;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 20px 0px 20px 400px;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border: 1px solid #0878a6;
+  outline: none; 
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form button {
+  font-size: 18px;
+  padding: 17px 55px;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-consent {
+  padding-right: 270px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  width: 1000px;
+  letter-spacing: 0.7px;     /* רווח אותיות קטן */
+  cursor: pointer;
+}
+.newsletter-consent input[type="checkbox"] {
+  margin-left: 8px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* עיצוב הקישור "תנאי השימוש" */
+.newsletter-consent a {
+  color: #0878a6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.newsletter-consent a:hover {
+  color: #000; 
+  text-decoration: underline;
+}

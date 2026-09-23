@@ -1,0 +1,79 @@
+@if (product(); as item) {
+<div class="container">
+  <div class="info-flex">
+    
+    <div class="info-image">
+      <img src="images/{{item.categoryName}}/{{item.imageUrl}}" [alt]="item.productName">
+    </div>
+
+    <div class="info-text">
+      <div class="info-category">
+        <h3><a routerLink="/products">{{ item.categoryName }}</a></h3>
+      </div>
+      
+      <div class="info-name"><p>{{ item.productName }}</p></div>
+      <div class="info-discription"><p>{{ item.productDescription }}</p></div>
+
+      @if (item.filterProduct && item.filterProduct !== 'אין') {
+        <div class="filter-disign">{{ item.filterProduct }}</div>
+      }
+
+      <div class="info-price-button">
+        <div><p>{{ item.productPrice }} ₪</p></div>
+        
+        <div id="div_button">
+          @if (qty() === 0) {
+            <button (click)="changeQty(1)"  class="product-button">הוספה לסל</button>
+          } @else {
+            <div class="qty_buttons">
+              <div class="change_qty_info" (click)="changeQty(1)">+</div>
+              <div class="qty_num">{{ qty() }}</div>
+              <div class="change_qty_info" (click)="changeQty(-1)">-</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="info-disc"><p>{{ item.priceDescription }}</p></div>
+
+      <div class="info-accordion">
+        <div class="info-senten" (click)="toggleHeating()">
+          <div class="switch-div">
+            <p>הוראות חימום</p>
+            <img class="arrow" [src]="showHeating() ? 'images/others/up-arrow.png' : 'images/others/dwon-arrow.png'">
+          </div>
+          @if (showHeating()) {
+            <p class="info-sentenc">{{ item.heatingInstruction }}</p>
+          }
+        </div>
+
+        <div class="info-senten" (click)="toggleDetails()">
+          <div class="switch-div">
+            <p>מידע על המוצר</p>
+            <img class="arrow" [src]="showDetails() ? 'images/others/up-arrow.png' : 'images/others/dwon-arrow.png'">
+          </div>
+          @if (showDetails()) {
+            <div class="details-content">
+              <p class="info-sentenc filter-disign">אלרגנים:</p>
+              <p class="info-sentenc">{{ item.allergens }}</p>
+              <p class="info-sentenc filter-disign">רכיבים:</p>
+              <p class="info-sentenc">{{ item.ingredients }}</p>
+              <p class="info-sentenc filter-disign">ערכים תזונתיים:</p>
+              <p class="info-sentenc">{{ item.nutritionalValues }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="info-images">
+        @if (item.highQuantity?.[0] === 1) { <img src="../../images/others/salt.png"> }
+        @if (item.highQuantity?.[1] === 1) { <img src="../../images/others/sugar.png"> }
+        @if (item.highQuantity?.[2] === 1) { <img src="../../images/others/fat.png"> }
+      </div>
+
+    </div>
+  </div>
+</div>
+} @else {
+  <p>טוען מוצר...</p>
+}

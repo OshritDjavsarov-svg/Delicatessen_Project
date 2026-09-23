@@ -1,0 +1,151 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* -----------לדף התחברות לאתר--------------- */
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.the-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #151313;
+}
+
+.main-container h1{
+  color: #394240;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  width: 800px;
+}
+
+.main-container span{
+  color: #0878a6;
+  font-size: 15px;;
+}
+
+.past-customers,
+.new-customers {
+  margin: 10px 20px;
+  width: 800px;
+  background: #fff;
+  padding: 40px 50px;
+  border: 2px solid #394240;
+  border-top: 6px solid #394240;
+  height: 100%;
+}
+
+.short-sentences {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.form-group{
+  margin-bottom:5px ;
+}
+
+.error-msg{
+  margin: 0px ;
+  margin-bottom: 5px;
+  color: red;
+  font-size: 10px;
+  margin-top: -5px;
+}
+
+/* הוספת מסגרת אדומה לשדה לא תקין שנגעו בו */
+/* input.ng-invalid.ng-touched {
+    border: 1px solid #dc3545 !important;
+} */
+
+/* labels and inputs */
+.main-container label {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.main-container input[type="text"],
+.main-container input[type="email"],
+.main-container input[type="password"],
+.main-container input[type="number"]{
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #242726;
+  font-size: 15px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+  border: 2px solid #0878a6;
+  outline: none; 
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.main-container input[type="checkbox"] {
+  margin-top: 6px;
+  margin-left: 6px;
+  transform: scale(1.1);
+  border: 2px solid #0878a6;
+}
+
+/* Buttons */
+.main-container button {
+  display: inline-block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.main-container button:hover {
+  background-color: #333;
+}
+
+/* Links in labels */
+.main-container label .forgot-password{
+  margin: 10px 0px;
+}
+
+.main-container label a {
+  color: #0878a6;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.main-container label a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.num-input{
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.num-input input[type="number"]{
+  width: 200px;
+}

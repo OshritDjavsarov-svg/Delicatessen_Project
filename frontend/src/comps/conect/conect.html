@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="main-container">
+        <h1 class="the-title">לקוחות רשומים</h1>
+        <h1 class="the-title">לקוחות חדשים</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="main-container">
+
+        <form #loginForm="ngForm" (ngSubmit)="onLogin()" id="conect" class="past-customers">
+            <p class="short-sentences">ברוך שובך</p>
+            
+            <div class="form-group">
+                <label>דוא"ל <span>*</span></label>
+                <input type="email" name="loginEmail" [(ngModel)]="loginData.email" required email #lEmail="ngModel">
+                @if (lEmail.invalid && lEmail.touched) {
+                    <p class="error-msg">נא להזין כתובת אימייל תקינה</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>סיסמא <span>*</span></label>
+                <input [type]="isPasswordVisible() ? 'text' : 'password'" 
+                       name="loginPass" [(ngModel)]="loginData.password" required #lPass="ngModel">
+                @if (lPass.invalid && lPass.touched) {
+                    <p class="error-msg">שדה חובה</p>
+                }
+            </div>
+            
+            <label>
+                <input type="checkbox" (change)="togglePassword()"> הצג סיסמה
+            </label>
+            <label><input type="checkbox"> זכור אותי</label>
+            <label class="forgot-password"><a href="#">שכחת את סיסמתך?</a></label>
+            
+            <button type="submit" [disabled]="!loginForm.valid">התחברו</button>
+        </form>
+
+        <form #regForm="ngForm" (ngSubmit)="onRegister()" id="register" class="new-customers">
+            <p class="short-sentences">ההרשמה לאתר נדרשת לצורך ביצוע הזמנה.</p>
+
+            <div class="form-group">
+                <label>שם פרטי <span>*</span></label>
+                <input type="text" name="pName" [(ngModel)]="registerData.privateName" required #pName="ngModel">
+                @if (pName.invalid && pName.touched) {
+                    <p class="error-msg">שם פרטי הוא שדה חובה</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>שם משפחה <span>*</span></label>
+                <input type="text" name="lName" [(ngModel)]="registerData.lastName" required #lName="ngModel">
+                @if (lName.invalid && lName.touched) {
+                    <p class="error-msg">שם משפחה הוא שדה חובה</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>דוא"ל <span>*</span></label>
+                <input type="email" name="regEmail" [(ngModel)]="registerData.email" required email #rEmail="ngModel">
+                @if (rEmail.invalid && rEmail.touched) {
+                    <p class="error-msg">אימייל לא תקין</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>מספר טלפון <span>*</span></label>
+                <input type="text" name="phone" [(ngModel)]="registerData.phone" required pattern="^[0-9]{9,10}$" #phone="ngModel">
+                @if (phone.invalid && phone.touched) {
+                    <p class="error-msg">מספר טלפון חייב להכיל 9-10 ספרות</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>עיר <span>*</span></label>
+                <input type="text" name="city" [(ngModel)]="registerData.city" required #city="ngModel">
+                @if (city.invalid && city.touched) {
+                    <p class="error-msg">שדה חובה</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>כתובת רחוב <span>*</span></label>
+                <input type="text" name="street" [(ngModel)]="registerData.addressStreet" required #street="ngModel">
+                @if (street.invalid && street.touched) {
+                    <p class="error-msg">שדה חובה</p>
+                }
+            </div>
+            
+            <div class="num-input">
+                <div class="form-group">
+                    <label>מספר בית <span>*</span></label>
+                    <input type="number" name="hNum" [(ngModel)]="registerData.houseNumber" required #hNum="ngModel">
+                    @if (hNum.invalid && hNum.touched) { <p class="error-msg">חובה</p> }
+                </div>
+                <div class="form-group">
+                    <label>כניסה <span>*</span></label>
+                    <input type="number" name="entry" [(ngModel)]="registerData.buildEntry" required #entry="ngModel">
+                </div>
+            </div>
+
+            <div class="num-input">
+                <div class="form-group">
+                    <label>דירה <span>*</span></label>
+                    <input type="number" name="apt" [(ngModel)]="registerData.apartment" required #apt="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>קומה <span>*</span></label>
+                    <input type="number" name="floor" [(ngModel)]="registerData.buildFloor" required #floor="ngModel">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>סיסמא <span>*</span></label>
+                <input type="password" name="regPass" [(ngModel)]="registerData.password" required minlength="6" #rPass="ngModel">
+                @if (rPass.invalid && rPass.touched) {
+                    <p class="error-msg">סיסמה חייבת להכיל לפחות 6 תווים</p>
+                }
+            </div>
+            
+            <div class="form-group">
+                <label>אימות סיסמא <span>*</span></label>
+                <input type="password" name="regPassConfirm" [(ngModel)]="registerData.passwordVerification" required #rPassConf="ngModel">
+                @if (registerData.password !== registerData.passwordVerification && rPassConf.touched) {
+                    <p class="error-msg">הסיסמאות אינן תואמות</p>
+                }
+            </div>
+
+            <label><input type="checkbox"> הרשמה לניוזלטר </label>
+            <!-- תמנע בקשה מהשרת אם חסרים נתוני חובה או שהסיסמאות לא תואמות -->
+            <button type="submit" [disabled]="!regForm.valid || registerData.password !== registerData.passwordVerification">הירשם</button>
+        </form>
+    </div>
+</div>

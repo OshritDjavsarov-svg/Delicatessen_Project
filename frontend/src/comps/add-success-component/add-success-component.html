@@ -1,0 +1,22 @@
+
+@if (cartService.showSuccessNotification()) {
+  @let p = cartService.lastAddedProduct();
+  
+  <div class="add_sucsses_div" id="add_sucsses_div">
+    
+    <div class="add_info">
+      <img [src]="'images/' + (p.categoryName) + '/' + (p.imageUrl)" [alt]="p.productName">
+      
+      <div class="add_info_text">
+        <span class="regular_p">{{ p.productName }}</span>
+        <span class="regular_p">{{ p.productPrice }} ₪</span>
+        <p>כמות: <span class="regular_p">1</span></p>
+      </div>
+    </div>
+
+    <div class="sucsses_senten_div">הפריט התווסף בהצלחה לסל</div>
+
+    <a [routerLink]="['/cart']" class="product-button">לסל קניות</a>
+    
+  </div>
+}

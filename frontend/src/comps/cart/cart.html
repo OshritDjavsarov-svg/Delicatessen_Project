@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="befor_cart">
+        <h2>לעגלת הקניות</h2>
+        <a class="cart_a" routerLink="/products">המשך קניה</a>
+        <a (click)="clearCart()" class="cart_a" href="javascript:void(0)">נקה עגלה</a>
+    </div>
+
+    <div class="class_flex">
+        <div class="products_section">
+            <table class="table_none">
+                <thead>
+                    <tr>
+                        <th class="col item"><span>פריט</span></th>
+                        <th class="col price"><span>מחיר ליחידה</span></th>
+                        <th class="col qty"><span>כמות</span></th>
+                        <th class="col subtotal"><span>סך הכל</span></th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div class="all_products_cart">
+                @for (item of getItems(); track item.orderItemId) {
+                    <div class="the_product">
+                        <div class="item_info">
+                            <img class="cart_product_img" [src]="getItemImage(item)" [alt]="item.productName">
+                            <a class="item_info_a" [routerLink]="['/product-info/' + item.productName + '/']">{{item.productName}}</a>
+                        </div>
+
+                        <div>
+                            <p class="price_info">{{item.unitPrice}} ₪</p>
+                        </div>
+
+                        <div class="qty_info">
+                            <div class="qty_buttons">
+                                <div class="change_qty" (click)="updateQty(item, 1)">+</div>
+                                <div class="qty_num">{{item.quantity}}</div>
+                                <div class="change_qty" (click)="updateQty(item, -1)">-</div>
+                            </div>
+                        </div>
+
+                        <div class="total_info">
+                            <p class="price_info">{{item.lineTotal}} ₪</p>
+                        </div>
+                    </div>
+                } @empty {
+                    <div class="empty_cart_msg">
+                        <p>העגלה שלך ריקה...</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div id="cart_gray" class="cart_gray">
+            <div class="cart_gray_h1">
+                <h1>סיכום הזמנה</h1>
+            </div>
+
+            <div class="cart_gray_cupon">
+                <h2>יש לי קוד קופון</h2>
+                <div class="cupon_input_wrapper">
+                    <input class="cupon_text" 
+                          type="text" 
+                          placeholder="הזן קוד קופון" 
+                          [(ngModel)]="couponCode">
+                          
+                    <button type="button" (click)="applyCoupon()">שלח</button>
+                </div>
+            </div>
+
+            <div class="cart_gray_calculte">
+                <div class="cart_flex cart_flex_black">
+                    <div>סך הכל מוצרים</div>
+                    <div>{{cartService.cart()?.totalPrice || 0}} ₪</div>
+                </div>
+                <div class="cart_flex cart_flex_gray">
+                    <div>משלוח (לפי עיר הלקוח)</div>
+                    <div>{{deliveryPrice}} ₪</div>
+                </div>
+                @if (discountPercent() > 0) {
+                    <div class="cart_flex cart_flex_gray">
+                        <div [ngClass]="isCouponValid() ? 'coupon-success' : 'coupon-error'">
+                            הנחת קופון (10%)
+                        </div>
+                        <div>{{ discountAmount() | number:'1.0-2' }}- ₪</div>
+                    </div>
+                }
+
+                <div class="cart_flex cart_flex_total" style="border-top: 1px solid #ccc; margin-top: 10px; padding-top: 10px;">
+                    <div><strong>לתשלום סופי</strong></div>
+                    <div><strong>{{ finalAmount() | number:'1.0-2' }} ₪</strong></div>
+                </div>
+            </div>
+
+            <div class="cart_last_div">
+                <div class="cart_totle_pric">
+                    <div>סך כל ההזמנה</div>
+                    <div>{{finalAmount()}} ₪</div>
+                </div>
+                <p>המחיר הסופי עשוי להשתנות לאחר שקילת המוצרים ביום המשלוח.</p>
+                <button class="checkout_btn" (click)="onCheckout()">לביצע הזמנה</button>
+            </div>
+        </div>
+    </div>
+</div>

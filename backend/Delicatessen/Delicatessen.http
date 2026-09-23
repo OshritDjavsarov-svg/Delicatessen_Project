@@ -1,0 +1,6 @@
+@Delicatessen_HostAddress = http://localhost:5237
+
+GET {{Delicatessen_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

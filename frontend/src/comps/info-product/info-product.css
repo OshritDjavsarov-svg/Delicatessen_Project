@@ -1,0 +1,249 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* -----------לדף מידע נוסף על פריט--------------- */
+.info-flex{
+  display: flex;
+  flex-direction: row;
+  background-color: #f9f9f9;
+}
+
+.info-image{
+  padding: 20px;
+  width: 50%;
+  aspect-ratio: 1 / 1; /* יחס 1:1 */
+  overflow: hidden;
+}
+
+.info-text{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.info-category h3{
+  padding-top: 10px;
+  height: 10px;
+  margin: 0px;
+}
+
+.info-text .info-category h3 a{
+  font-size: 10px;
+  text-decoration: none;
+  color: #9aa1a7;
+}
+
+.info-text .info-category h3 a :hover{
+  text-decoration: underline;
+  color: #9aa1a7;
+}
+
+.info-name{
+  font-size: 25px;
+  color: #394240;
+}
+
+.info-name p{
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.info-discription{
+  font-size: 12px;
+  color: #9aa1a7;
+}
+
+.info-price-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.info-price-button .product-button{
+  width: 250px;
+}
+
+.info-disc{
+  font-size: 12px;
+  color: #9aa1a7;
+}
+
+.info-disc p{
+  margin: 0px;
+  padding-bottom: 30px;
+}
+
+.info-senten{
+  border-top: #adadad solid 1px;
+  border-bottom: #adadad solid 1px;
+  color: #101010;
+  font-weight: bold;
+  margin: -2px 0px;
+}
+
+.info-sentenc{
+  font-size: 10px;
+  margin: 0px;
+  padding: 5px 15px;
+}
+
+.switch-div{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.arrow{
+  aspect-ratio: 1 / 1; /* יחס 1:1 */
+  width: 10px;
+  height: 10px;
+  margin:auto 0px;
+}
+
+.info-images{
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.info-images img{
+  aspect-ratio: 1 / 1; /* יחס 1:1 */
+  width: 70px;
+  height: 70px;
+}
+
+.heating-content{
+  font-size: 10px;
+  padding: 5px ;
+}
+
+.disign{
+  padding-right: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  width: 2000px;
+}
+
+.aaa{
+  width: 300px;
+  height: 300px;
+}
+
+.info{
+  text-decoration: none;
+  color: black;
+}
+
+.info:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #151313;
+}
+
+.product-description {
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+  height: 70px;
+}
+
+.filter-disign{
+  color: #268ac3;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.unfilter-disign{
+  height: 9px;
+}
+
+.product-price {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.price-note {
+  display:inline-block;
+  font-size: 11px;
+  font-weight: normal;
+  color: #200010;
+  margin-bottom: 10px;
+}
+
+/* כפתור */
+.product-button {
+  color: white;
+  width: 100%;
+  background-color: #242726;
+  border: none;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-button:hover {
+  background-color:  #404342;
+}
+
+.qty_info{
+  width: 225px;
+}
+
+.qty_buttons{
+  width: 150px;
+  height: 30px;
+  border: #000 1px solid;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.change_qty{
+  width: 30px;
+  height: 30px;
+  color: #000;
+  background-color: #fff;
+  font-size: 21px;
+}
+
+.change_qty_info{
+  width: 30px;
+  height: 30px;
+  color: #000;
+  background-color: #f9f9f9;
+  font-size: 20px;
+}
+
+.change_qty:hover{
+  color: #fff;
+  background-color: #000;
+}
+
+.change_qty_info:hover{
+  color: #f9f9f9;
+  background-color: #000;
+}
+
+.qty_num{
+  width: 90px;
+}

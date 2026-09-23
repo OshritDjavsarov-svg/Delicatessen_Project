@@ -1,0 +1,125 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* --------The Cards----------- */
+/* כותרת קטגוריה */
+.category-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin: 40px 0 20px 0;
+  border-bottom: 2px solid #adadad;
+  padding-bottom: 5px;
+}
+
+/* גריד מוצרים */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05); /* קו עדין מסביב */
+  border-radius: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;  /* או שיהיה אחיד */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* יחס 1:1 */
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-details {
+  padding:0px;
+  box-sizing: border-box;
+}
+
+.info{
+  text-decoration: none;
+  color: black;
+}
+
+.info:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #151313;
+}
+
+.product-description {
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+  height: 70px;
+}
+
+.filter-disign{
+  color: #268ac3;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.unfilter-disign{
+  height: 9px;
+}
+
+.product-price {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.price-note {
+  display:inline-block;
+  font-size: 11px;
+  font-weight: normal;
+  color: #200010;
+  margin-bottom: 10px;
+}
+
+/* כפתור */
+.product-button {
+  color: white;
+  width: 100%;
+  background-color: #242726;
+  border: none;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-button:hover {
+  background-color:  #404342;
+}

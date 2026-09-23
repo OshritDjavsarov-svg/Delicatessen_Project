@@ -1,0 +1,32 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* -----------GRAY PLACE------------- */
+.bakery-section {
+  background-color: #e8e8e8; 
+  height: 300px;
+}
+
+.bakery-title {
+  font-size: 42px;
+  padding: 20px 0px 20px 0px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.bakery-description p {
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.8;
+  letter-spacing: 0.7px;     /* רווח אותיות קטן */
+  margin: 0;
+  text-align: right;
+  max-width: 550px;
+}

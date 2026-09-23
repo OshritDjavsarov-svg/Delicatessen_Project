@@ -1,0 +1,107 @@
+
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+
+/* --------last footer----------- */
+.site-footer {
+  background-color: #242726;    
+  color: #ffffff;                 
+  padding: 40px 20px 20px 20px; 
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  min-width: 200px;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;            
+  flex-wrap: wrap;         
+  gap: 20px;                
+  justify-content: center;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.the-line{
+  font-size: 17px;
+  color: #878c8b;
+}
+
+.the-dot{
+  font-size: 17px;
+  font-weight: 900;
+}
+
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column-line ul li a:hover {
+  color: #fccf61;
+}
+
+.footer-bottom {
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+}
+
+.footer-bottom p{
+  color: white;
+  font-size: 15px;
+}
+
+.footer-bottom p a{
+  text-decoration: none;
+  color: white;
+}
+
+.footer-bottom p a:hover{
+  text-decoration: underline;
+}
+
+.footer-line{
+  border-bottom: 1px solid #444;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+  }
+  .footer-column {
+    min-width: 100%;
+  }
+}
+

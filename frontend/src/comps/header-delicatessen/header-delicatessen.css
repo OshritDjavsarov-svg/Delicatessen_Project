@@ -1,0 +1,172 @@
+body
+{
+    direction: rtl;
+}
+.head
+{
+  position: relative;
+  position: sticky;
+  top: 25px;  /* topperמתחיל איפה שמסתיים ה */
+  z-index: 1; /* כדי שיישאר מעל כל האלמנטים */
+  background-color: #fff; /* רקע לבן כדי שהאלמנטים מלמטה יהיו מוסתרים*/  
+  padding: 0px 20px 0px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+
+.head .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.first-element
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.last-element img
+{
+    height: 70px;
+    width: 140px;
+}
+
+
+.start-order-button 
+{
+  background-color: #fccf61;
+  color: black;
+  border: none;
+  /* הוספת מסגרת שקופה שהגודל לא ישתנה במעבר עם העכבר על הכפתור */
+   border: 5px solid transparent;
+  border-radius: 100px;
+  padding: 13px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.start-order-button:hover 
+{
+  background-color: #ffffff;
+  border: 5px solid #fccf61;
+  color: black;
+}
+
+.order-section {
+  border-right: 1px solid #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 30px;
+  direction: rtl;
+}
+
+.order-text {
+  width: 200px; 
+  line-height: 1.4;
+}
+
+.order-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 17px; /* גודל קבוע */
+  font-weight: bold;
+  white-space: normal;
+}
+
+.order-text p {
+  margin: 0;
+  font-size: 13px; /* גודל קבוע */
+  color: #000000;
+  white-space: normal;
+  letter-spacing: 0.7px;     /* רווח אותיות קטן */
+}
+
+.name_div{
+  margin-right: 10px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* עיצוב רספונסיבי: לא נוגעים בטקסט – רק מבנה */
+@media (max-width: 600px) {
+  .order-section {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+
+  .start-order-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+.header-icons { 
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+
+/* .header-icons li ::marker{
+  color: #fff;
+} */
+
+.back-arrow-icon img{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.back-arrow-icon button{
+  background-color: #fff;
+  border: none;
+}
+.header-icons img
+{
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+/* 
+.count_product{
+  width: 10px;
+  height: 10px;
+  background-color: #fccf61;
+  position: fixed ;
+} */
+
+.count_product{
+  background-color: #fccf61;
+  color: black;
+  position: absolute;
+  height: 10px;
+  padding: 5px 7px;
+  height: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -12px;
+}
+
+.header-icons .cart_icon{
+  position: revert;
+}
+
+.back_icon:hover{
+  border: black solid 1px;
+}
+
+.back_icon{
+  padding-top: 8px;
+  padding-bottom: -8px;
+  border: transparent solid 1px;
+}

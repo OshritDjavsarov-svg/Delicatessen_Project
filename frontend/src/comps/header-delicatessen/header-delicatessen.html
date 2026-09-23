@@ -1,0 +1,53 @@
+
+<header class="head">
+       
+    <div class="container">
+        <div id="first-element" class="first-element"> 
+            <!-- אייקונים לניתוב בין העמודים -->
+            <div class="header-icons">
+                <a (click)="back()" class="icon back_icon" style="cursor: pointer;">
+                    <img src="../../images/others/back_arrow.PNG" title="חזרה אחורה" alt="back">
+                </a>
+
+                <div>
+                    <span id="count_product" class="count_product">
+                        {{ cartService.totalItemsCount() }}
+                    </span>
+                    <a [routerLink]="['/cart']" class="icon cart_icon">
+                        <img src="../../images/others/cart.png" title="סל קניות" alt="cart">
+                    </a>
+                </div>
+
+                <a [routerLink]="['/']" class="icon">
+                    <img src="../../images/others/man.png" title="טופס הירשמות" alt="conect">
+                </a>
+                
+            </div>
+
+            <div class="order-section">
+                <div class="order-text">
+                    <h3>בחירת זמן ואופן אספקה</h3>
+                    <p>כדי להתחיל להזמין יש לבחור</p>
+                    <p>תאריך ואופן האספקה</p>
+                </div>
+        
+                <button class="start-order-button">
+                    לתחילת הזמנה
+                </button>
+
+                <!-- דיב המכיל את שם המשתמש הנוכחי -->
+                <div class="name_div" id="name_div"></div>
+                
+            </div>  
+                
+                
+        </div>
+
+        <!-- לוגו דליקטסן -->
+        <div id="last-element" class="last-element">
+            <img src="../../images/others/full_logo.png" title="Delicatessen - דליקטסן" alt="Delicatessen - דליקטסן">
+        </div>
+
+    </div>
+
+</header>

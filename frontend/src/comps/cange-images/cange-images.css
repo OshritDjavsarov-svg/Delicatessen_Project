@@ -1,0 +1,25 @@
+.title-image{
+  max-width: 1800px; 
+  margin: 0 auto;   
+  padding: 0 ; 
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  object-fit:cover;
+  transition: opacity 0.8s ease-in-out; /* מעבר חלק לשינוי שקיפות */
+}
+
+
+/* אנימציית ה-Fade */
+/* .fade-animation {
+    animation: fadeEffect 3s infinite;
+}
+
+@keyframes fadeEffect {
+    0% { opacity: 0.4; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0.4; }
+} */

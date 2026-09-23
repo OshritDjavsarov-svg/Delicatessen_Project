@@ -1,0 +1,41 @@
+<section class="filter-buttons-section">
+    <div class="container">
+        <div class="filter-container">
+            <button class="filter-toggle" (click)="toggleOtherFilter()">אפשרויות סינון</button>
+
+            @if (isOtherDropdownOpen) {
+                <div class="filter-dropdown filter-dropdown-other">
+                    <div class="filter-group">
+                        @for (option of filterOptions; track option.value) {
+                            <label>
+                                <input type="checkbox" [(ngModel)]="option.checked"> {{ option.label }}
+                            </label>
+                        }
+                        <button (click)="applyFilters()" id="ok_otherFilter">אישור</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="filter-container">
+            <button class="filter-toggle" (click)="toggleCategoryFilter()">קטגוריה</button>
+            
+            @if (isCategoryDropdownOpen) {
+                <div class="filter-dropdown">
+                    <div class="filter-group">
+                        @for (cat of categories; track cat) {
+                            <div class="filter-button">
+                                <button (click)="onCategorySelect(cat)" [title]="cat">{{ cat }}</button>
+                                <br>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+

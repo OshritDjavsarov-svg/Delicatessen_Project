@@ -1,0 +1,257 @@
+/* -----------CONTAINER------------- */
+.container
+{
+  max-width: 1400px; 
+  margin: 0 auto;   
+  padding: 0 20px;
+}
+
+/* -----------לדף עגלת קניה--------------- */
+.befor_cart{
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.befor_cart h2{
+  margin: 0;
+}
+
+.cart_a{
+  padding-top: 8px;
+  color: #000;
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.befor_cart a:hover{
+  text-decoration: none;
+}
+
+.col{
+  padding: 0px 5px 10px 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.item{
+  width: 290px;
+}
+
+.price{
+  width: 155px;
+}
+
+.qty{
+  width: 182px;
+}
+
+.subtotal{
+  width: 150px;
+}
+
+.class_flex{
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+
+.all_products_cart{
+  margin-bottom: 80px;
+  
+}
+
+.the_product{
+  padding: 20px 0px;
+  width: 850px;
+  border-top: 1px solid #dbd9d9;
+  border-bottom: 1px solid #dbd9d9;
+  display: flex;
+  flex-direction: row;
+}
+
+.item_info{
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.cart_product_img{
+  aspect-ratio: 1 / 1; /* יחס 1:1 */
+  width: 80px;
+  height: 80px;
+}
+
+.item_info_a{
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+}
+
+.item_info a:hover{
+  text-decoration: underline;
+}
+
+.price_info{
+  width: 165px;
+  margin: 0px;
+}
+
+.qty_info{
+  width: 225px;
+}
+
+.qty_buttons{
+  width: 150px;
+  height: 30px;
+  border: #000 1px solid;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.change_qty{
+  width: 30px;
+  height: 30px;
+  color: #000;
+  background-color: #fff;
+  font-size: 21px;
+}
+
+.change_qty_info{
+  width: 30px;
+  height: 30px;
+  color: #000;
+  background-color: #f9f9f9;
+  font-size: 20px;
+}
+
+.change_qty:hover{
+  color: #fff;
+  background-color: #000;
+}
+
+.change_qty_info:hover{
+  color: #f9f9f9;
+  background-color: #000;
+}
+
+.qty_num{
+  width: 90px;
+}
+
+.total_info{
+  width: 150px;
+}
+
+.remove_product{
+  color: #000;
+  width: 40px;
+  font-size: 10px;
+  margin: 0px;
+  padding-top: 65px;
+  cursor: pointer;
+}
+
+.remove_product:hover{
+  text-decoration:underline ;
+}
+
+.cart_gray{
+  background-color: #eeefef;
+  width: 350px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.cart_gray_h1{
+  border-bottom: 1px solid black;
+}
+
+.cart_gray_h1 h1{
+  font-size: 20px;
+  padding: 10px;
+  margin: 0px;
+}
+
+.cart_gray_cupon{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.cart_gray_cupon h2{
+  margin: 0px;
+  font-size: 13px;
+}
+
+.cupon_text{
+  margin: 0px 10px;
+  width: 100px;
+}
+
+.cupon_text input[type="text"]:focus{
+  width: 100px;
+  border: 2px solid #0878a6;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.cart_gray_calculte{
+  border-bottom: 1px solid #dbd9d9;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.cart_flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart_flex_black{
+  color: #000;
+  padding-bottom: 3px;
+}
+
+.cart_flex_gray{
+  color: #68696b;
+  padding-top: 3px;
+}
+
+
+.cart_totle_pric{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.cart_last_div{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart_last_div p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.coupon-success {
+  color: #28a745 !important; /* ירוק */
+  font-weight: bold;
+}
+
+.coupon-error {
+  color: #dc3545 !important; /* אדום */
+}
